@@ -287,7 +287,7 @@ export default function AdminDashboardPage() {
       {/* Header */}
       <header className="border-b border-zinc-800/70 bg-black/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/Hero">
             <Image src="/icon.png" alt="GymFlow" width={32} height={32} priority />
             <span className="text-lg font-bold tracking-wide text-white">
               Gym<span className="text-zinc-400">Flow</span>
@@ -296,10 +296,10 @@ export default function AdminDashboardPage() {
               Admin
             </span>
           </Link>
-          <button className="flex items-center gap-1.5 text-sm font-medium text-zinc-400 transition-colors hover:text-white">
+          <Link href="/" className="flex items-center gap-1.5 text-sm font-medium text-zinc-400 transition-colors hover:text-white" >
             <LogOut className="h-4 w-4" />
             Sair
-          </button>
+          </Link>
         </div>
       </header>
 
