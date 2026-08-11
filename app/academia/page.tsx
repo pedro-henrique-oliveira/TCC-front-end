@@ -129,17 +129,13 @@ function formatarMoeda(valor?: string | number) {
 
 function numero(valor?: string | number) {
   if (typeof valor === "number") return valor;
-
   if (!valor) return 0;
-
-  const convertido = Number(
-    String(valor)
-      .replace("R$", "")
-      .replace(/\./g, "")
-      .replace(",", ".")
-      .trim()
-  );
-
+  let str = String(valor).replace("R$", "").trim();
+  // Se contiver vírgula (ex: "3.500,00" ou "3500,00")
+  if (str.includes(",")) {
+    str = str.replace(/./g, "").replace(",", ".");
+  }
+  const convertido = Number(str);
   return Number.isNaN(convertido) ? 0 : convertido;
 }
 
