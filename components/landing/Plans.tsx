@@ -123,7 +123,7 @@ export default function Plans() {
               </ul>
 
               <div className="mt-10">
-                <Button className="w-full">Solicitar Demonstração</Button>
+                <Button className="w-full">Solicitar Plano</Button>
               </div>
             </div>
           ))}

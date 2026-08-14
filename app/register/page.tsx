@@ -36,8 +36,8 @@ export default function RegisterPage() {
     try {
       const result = await registerAction(name, email, password);
 
-      if (result) {
-        setError(result.message ?? "Não foi possível criar a conta.");
+      if (result?.error) {
+        setError(result.error);
         setLoading(false);
         return;
       }
@@ -45,6 +45,7 @@ export default function RegisterPage() {
       router.push("/dashboard");
       router.refresh();
     } catch (err) {
+      console.error(err);
       setError("Não foi possível conectar. Tente novamente.");
       setLoading(false);
     }
